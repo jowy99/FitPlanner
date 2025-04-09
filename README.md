@@ -21,12 +21,14 @@ Este proyecto representa la base de un sistema profesional de autenticación y a
 
 ## 📁 Estructura del proyecto
 
+```
 src/
 ├── config/             # Conexión y migraciones de la base de datos
 ├── controllers/        # Lógica de negocio (auth y usuarios)
 ├── middlewares/        # Autenticación y autorización
 ├── routes/             # Definición de rutas
 └── app.js              # Punto de entrada principal
+```
 
 ---
 
