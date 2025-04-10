@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const { crearBaseDeDatosSiNoExiste } = require('./config/db');
 const { ejecutarMigraciones } = require('./config/migrations');
-const authRoutes = require('./routes/auth.routes');
+const authRoutes = require('./routes/auth');
 const usuariosRoutes = require('./routes/usuarios.routes');
 const rutinasRoutes = require('./routes/rutinas.routes');
 const configuracionRoutes = require('./routes/configuracion.routes');
