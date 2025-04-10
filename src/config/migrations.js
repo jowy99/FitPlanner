@@ -6,7 +6,7 @@ const crearTablaRutinaEjercicios = require('./migrations/ejercicios/rutina_ejerc
 const crearTablaConfiguracionEjercicio = require('./migrations/ejercicios/configuracion_ejercicios');
 const crearTablaTiposEquipo = require('./migrations/ejercicios/tipos_equipo');
 
-const crearTablaProgreso = require('./progreso/registroProgreso');
+const crearTablaProgreso = require('./migrations/progreso/registroProgreso');
 
 async function ejecutarMigraciones() {
     await crearExtensionPGCrypto();
