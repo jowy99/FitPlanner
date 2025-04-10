@@ -5,6 +5,7 @@ const { ejecutarMigraciones } = require('./config/migrations');
 const authRoutes = require('./routes/auth.routes');
 const usuariosRoutes = require('./routes/usuarios.routes');
 const rutinasRoutes = require('./routes/rutinas.routes');
+const configuracionRoutes = require('./routes/configuracion.routes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,6 +14,7 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/usuarios', usuariosRoutes);
 app.use('/api/rutinas', rutinasRoutes);
+app.use('/api/configuracion', configuracionRoutes);
 
 (async () => {
   try {
