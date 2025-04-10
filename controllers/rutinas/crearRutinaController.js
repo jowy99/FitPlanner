@@ -1,4 +1,4 @@
-const { pool } = require('../../config/db');
+const { pool } = require('../../../config/db');
 
 const crearRutina = async (req, res) => {
     const { nombre, descripcion, categoria, es_publica, dia_semana, hora_dia } = req.body;
