@@ -6,6 +6,7 @@ const authRoutes = require('./routes/auth.routes');
 const usuariosRoutes = require('./routes/usuarios.routes');
 const rutinasRoutes = require('./routes/rutinas.routes');
 const configuracionRoutes = require('./routes/configuracion.routes');
+const progressRoutes = require('./routes/progreso.routes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -15,6 +16,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/usuarios', usuariosRoutes);
 app.use('/api/rutinas', rutinasRoutes);
 app.use('/api/configuracion', configuracionRoutes);
+app.use('/api/progreso', progressRoutes);
 
 (async () => {
   try {
