@@ -3,10 +3,10 @@ const express = require('express');
 const { crearBaseDeDatosSiNoExiste } = require('./config/db');
 const { ejecutarMigraciones } = require('./config/migrations');
 const authRoutes = require('./routes/auth');
-const usuariosRoutes = require('./routes/usuarios.routes');
+const usuariosRoutes = require('./routes/usuarios');
 const rutinasRoutes = require('./routes/rutinas');
 const configuracionRoutes = require('./routes/configuracion.routes');
-const progressRoutes = require('./routes/progreso.routes');
+const progressRoutes = require('./routes/progreso');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
