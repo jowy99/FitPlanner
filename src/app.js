@@ -4,7 +4,7 @@ const { crearBaseDeDatosSiNoExiste } = require('./config/db');
 const { ejecutarMigraciones } = require('./config/migrations');
 const authRoutes = require('./routes/auth');
 const usuariosRoutes = require('./routes/usuarios.routes');
-const rutinasRoutes = require('./routes/rutinas.routes');
+const rutinasRoutes = require('./routes/rutinas');
 const configuracionRoutes = require('./routes/configuracion.routes');
 const progressRoutes = require('./routes/progreso.routes');
 
