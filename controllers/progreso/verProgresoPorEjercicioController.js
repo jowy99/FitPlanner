@@ -1,4 +1,4 @@
-const { pool } = require('../../../config/db');
+const { pool } = require('../../config/db');
 
 const verProgresoPorEjercicio = async (req, res) => {
     const usuario_id = req.usuario?.id;

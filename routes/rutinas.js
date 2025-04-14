@@ -1,21 +1,23 @@
 const express = require('express');
 const router = express.Router();
 const authMiddleware = require('../middleware/authMiddleware');
+
+// Controllers
 const crearRutina = require('../controllers/rutinas/crearRutinaController');
 const obtenerRutinas = require('../controllers/rutinas/obtenerRutinasController');
-const obtenerRutinaID = require('../controllers/rutinas/obtenerRutinaIDController');
+const obtenerRutinaPorId = require('../controllers/rutinas/obtenerRutinaIDController');
 const editarRutina = require('../controllers/rutinas/editarRutinaController');
 const eliminarRutina = require('../controllers/rutinas/eliminarRutinaController');
-const aniadirEjercicioRutina = require('../controllers/rutinas/aniadirEjercicioRutinaController');
-const eliminarEjercicioRutina = require('../controllers/rutinas/eliminarEjercicioRutinaController');
+const agregarEjercicioARutina = require('../controllers/rutinas/aniadirEjercicioRutinaController');
+const eliminarEjercicioDeRutina = require('../controllers/rutinas/eliminarEjercicioRutinaController');
 
-// Ruta para crear una rutina (requiere estar autenticado)
-router.post('/', authMiddleware, crearRutina);
-router.get('/', authMiddleware, obtenerRutinas);
-router.get('/:id', authMiddleware, obtenerRutinaID);
-router.put('/:id', authMiddleware, editarRutina);
-router.delete('/:id', authMiddleware, eliminarRutina);
-router.post('/ejercicio', authMiddleware, aniadirEjercicioRutina);
-router.delete('/ejercicio/:id', authMiddleware, eliminarEjercicioRutina);
+// Rutas
+router.post('/crear', authMiddleware, crearRutina);
+router.get('/obtener', authMiddleware, obtenerRutinas);
+router.get('/:rutina_id', authMiddleware, obtenerRutinaPorId);
+router.put('/:rutina_id', authMiddleware, editarRutina);
+router.delete('/:rutina_id', authMiddleware, eliminarRutina);
+router.post('/:rutina_id/ejercicio', authMiddleware, agregarEjercicioARutina);
+router.delete('/:rutina_id/ejercicio/:ejercicio_id', authMiddleware, eliminarEjercicioDeRutina);
 
 module.exports = router;
