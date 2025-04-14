@@ -1,40 +1,53 @@
 import React from 'react';
 
 export default function LoginForm() {
-  return (
-    <form className="space-y-6">
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-          Correo electrónico
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          className="mt-1 block w-full px-4 py-2 border rounded-xl bg-white dark:bg-gray-700 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-        />
-      </div>
+	return (
+		<form
+			className="space-y-6"
+			aria-label="Formulario de inicio de sesión"
+		>
+			<fieldset className="space-y-1">
+				<label
+					htmlFor="email"
+					className="block text-sm font-medium text-dark-900 dark:text-dark-100"
+				>
+					Correo electrónico
+				</label>
+				<input
+					type="email"
+					id="email"
+					name="email"
+					autoComplete="email"
+					required
+					className="w-full px-4 py-2 rounded-2xl border border-dark-200 dark:border-dark-500 bg-white dark:bg-[#2b2b2b] text-dark-900 dark:text-white placeholder:text-dark-400 dark:placeholder:text-dark-300 focus:outline-none focus:ring-2 focus:ring-primary-500 shadow-sm transition-all duration-200"
+					placeholder="ejemplo@correo.com"
+				/>
+			</fieldset>
 
-      <div>
-        <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-          Contraseña
-        </label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          required
-          className="mt-1 block w-full px-4 py-2 border rounded-xl bg-white dark:bg-gray-700 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-        />
-      </div>
+			<fieldset className="space-y-1">
+				<label
+					htmlFor="password"
+					className="block text-sm font-medium text-dark-900 dark:text-dark-100"
+				>
+					Contraseña
+				</label>
+				<input
+					type="password"
+					id="password"
+					name="password"
+					autoComplete="current-password"
+					required
+					className="w-full px-4 py-2 rounded-2xl border border-dark-200 dark:border-dark-500 bg-white dark:bg-[#2b2b2b] text-dark-900 dark:text-white placeholder:text-dark-400 dark:placeholder:text-dark-300 focus:outline-none focus:ring-2 focus:ring-primary-500 shadow-sm transition-all duration-200"
+					placeholder="••••••••"
+				/>
+			</fieldset>
 
-      <button
-        type="submit"
-        className="w-full py-2 px-4 text-white bg-primary hover:bg-indigo-700 rounded-xl font-semibold transition-colors"
-      >
-        Iniciar sesión
-      </button>
-    </form>
-  );
+			<button
+				type="submit"
+				className="w-full py-2 px-4 bg-primary-500 hover:bg-primary-600 focus:ring-2 focus:ring-primary-400 text-white font-semibold rounded-2xl shadow-md transition-all duration-200"
+			>
+				Iniciar sesión
+			</button>
+		</form>
+	);
 }
