@@ -1,9 +1,8 @@
 const { pool } = require('../../config/db');
 
 const obtenerPerfil = async (req, res) => {
-    const { id } = req.usuario;
-
     try {
+        const { id } = req.usuario;
         const resultado = await pool.query(
             `SELECT id, nombre, email, rol, creado_en FROM usuarios Where id = $1`,
             [id]

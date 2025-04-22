@@ -1,3 +1,4 @@
+const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const pool = require('../../config/db').pool;
 
@@ -25,9 +26,16 @@ const register = async (req, res) => {
 
         const usuario = resultado.rows[0];
 
+        const token = jwt.sign(
+            { id: usuario.id, email: usuario.email, nombre: usuario.nombre },
+            process.env.JWT_SECRET,
+            { expiresIn: process.env.JWT_EXPIRES_IN || '3h' }
+        );
+
         res.status(201).json({
             mensaje: 'Usuario registrado correctamente',
-            usuario
+            usuario,
+            token
         });
     } catch (error) {
         console.error('Error al registrar usuario: ', error.message);
