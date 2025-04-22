@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const { crearBaseDeDatosSiNoExiste } = require('./config/db');
 const { ejecutarMigraciones } = require('./config/migrations');
+const { ejecutarSeeds } = require('./config/seeds');
 const authRoutes = require('./routes/auth');
 const usuariosRoutes = require('./routes/usuarios');
 const rutinasRoutes = require('./routes/rutinas');
@@ -26,8 +27,8 @@ app.use('/api/progreso', progressRoutes);
 (async () => {
   try {
     await crearBaseDeDatosSiNoExiste();
-    const db = require('./config/db');
     await ejecutarMigraciones();
+    await ejecutarSeeds();
 
     app.get('/{*splat}', (req, res) => {
       if (!req.originalUrl.startsWith('/api')) {

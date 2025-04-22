@@ -8,6 +8,8 @@ async function crearTablaEjercicios() {
             grupo_muscular VARCHAR(50),
             descripcion TEXT,
             tipo_equipo INTEGER REFERENCES tipos_equipo(id),
+            imagen_url TEXT,
+            video_url TEXT,
             es_activo BOOLEAN DEFAULT true,
             creado_en TIMESTAMP DEFAULT NOW()
         )
